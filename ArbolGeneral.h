@@ -23,9 +23,9 @@ class ArbolGeneral {
         bool esVacio ( void ) ;
         NodoGeneral<T>* obtenerRaiz ( void ) ;
         void fijarRaiz ( NodoGeneral<T>* nraiz ) ;
-        bool insertarNodo ( T padre, T n ) ;
+        bool insertarNodo ( T padre , T n ) ;
         bool eliminarNodo ( T n ) ;
-        bool buscar ( T n ) ;
+        NodoGeneral<T>* buscar ( NodoGeneral<T>* nodo , T n ) ;
         unsigned int altura ( void ) ;
         unsigned int tamano ( void ) ;
         void preOrden ( void ) ;

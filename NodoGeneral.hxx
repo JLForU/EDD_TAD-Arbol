@@ -1,6 +1,6 @@
 
 // DIRECTIVAS DE PREPROCESADOR
-#include "NodoGeneral.h"
+#include "NodoGeneral.hxx"
 
 
 
@@ -14,12 +14,17 @@ NodoGeneral<T>::NodoGeneral ( void ) {
 template <class T>
 NodoGeneral<T>::~NodoGeneral ( void ) {
 
-    typename std::list<NodoGeneral<T>>::iterator it ;
+    typename std::list<NodoGeneral<T>*>::iterator it ;
     for ( it=this->desc.begin() ; it != this->desc.end() ; it++ )
         delete *it ;
       
     this -> desc.clear() ;
     
+}
+
+template <class T>
+std::list<NodoGeneral<T>*>& NodoGeneral<T>::obtenerDesc ( void ) {
+    return this -> desc ;
 }
 
 template <class T>
@@ -87,7 +92,7 @@ int NodoGeneral<T>::altura ( void ) {
         int alth ;
         
         typename std::list<NodoGeneral<T>*>::iterator it ;
-        for (it = this->desc.begin(); it != this->desc.end(); it++) {
+        for ( it=this->desc.begin() ; it != this->desc.end() ; it++ ) {
             alth = (*it)->altura() ;
             if ( alt < alth+1 )
                 alt = alth+1 ;

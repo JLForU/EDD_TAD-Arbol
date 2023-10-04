@@ -18,9 +18,10 @@ class NodoGeneral {
         std::list<NodoGeneral<T>*> desc ;
 
     public :
-      
+
         NodoGeneral ( void ) ;
         ~NodoGeneral ( void ) ;
+        std::list<NodoGeneral<T>*>& obtenerDesc ( void ) ;
         T& obtenerDato ( void ) ;
         void fijarDato ( T& val ) ;
         void limpiarLista ( void ) ;
